@@ -1,6 +1,6 @@
 //index.js/
 var express = require('express'),
-    exphbs  = require('express4-handlebars'),
+    exphbs  = require('express3-handlebars'),
     passport = require('passport'),
     LocalStrategy = require('passport-local'),
     TwitterStrategy = require('passport-twitter'),
@@ -65,26 +65,11 @@ app.use(function(req, res, next){
 // app.use(app.router); no longer needed in Express 4
 
 // Configure express to use handlebars templates
-
-// var hbs = exphbs.create({
-//     defaultLayout: 'main', //we will be creating this layout shortly
-// });
-// app.engine('handlebars', hbs.engine);
-// app.set('view engine', 'handlebars');
-// 
-var views_path = './views';
-
-var hbs = exphbs.get('extname');
-
-console.log(hbs);
-
-app.engine(hbs, exphbs.__express);
-app.set('view engine', hbs);
-
-exphbs.set('layout_dir', path.join(views_path, 'layouts'));
-exphbs.set('partials_dir', path.join(views_path, 'partials'));
-exphbs.set('useLayout', true);
-exphbs.set('layout', 'main');
+var hbs = exphbs.create({
+    defaultLayout: 'main', //we will be creating this layout shortly
+});
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 
 //===============ROUTES===============
