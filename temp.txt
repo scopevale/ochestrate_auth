@@ -1,0 +1,10 @@
+ engine = require 'express4-handlebars'
+  extname = engine.get 'extname'
+
+  app.engine extname, engine.__express
+  app.set 'view engine', extname
+
+  engine.set 'layout_dir', join(views_path, 'layout')
+  engine.set 'partials_dir', join(views_path, 'partials')
+  engine.set 'useLayout', true
+  engine.set 'layout', 'layout'
