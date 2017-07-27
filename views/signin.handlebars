@@ -4,10 +4,10 @@
   <p>We're using passport.js to demonstrate user authentication. Please sign-in with your Local, Twitter, Google, or Facebook account to view your profile.</p>
   <p>
 <!-- 		<a data-toggle="collapse" href="#local" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> Sign in Locally</a> -->
-		<a data-toggle="modal" data-target="#myModal" href="#local" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> Sign in Locally</a>
-    <a href="/auth/twitter" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> Sign in with Twitter</a>
-    <a href="/auth/google" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> Sign in with Google</a>
-    <a href="/auth/facebook" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> Sign in with Facebook</a>
+		<a data-toggle="modal" data-target="#myModal" href="#local" class="btn btn-warning btn-md" role="button"><span class="glyphicon glyphicon-user"></span> Sign in/Register Locally</a>
+    <a href="/auth/twitter" class="btn btn-info btn-md" role="button"><span class="glyphicon glyphicon-user"></span> Sign in with Twitter</a>
+    <a href="/auth/google" class="btn btn-danger btn-md" role="button"><span class="glyphicon glyphicon-user"></span> Sign in with Google</a>
+    <a href="/auth/facebook" class="btn btn-primary btn-md" role="button"><span class="glyphicon glyphicon-user"></span> Sign in with Facebook</a>
   </p>
 <div class="modal fade bs-modal-sm in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" >
   <div class="modal-dialog modal-sm">
@@ -24,7 +24,7 @@
         <div id="myTabContent" class="tab-content">
         <div class="tab-pane fade" id="why">
         <p>We need this information so that you can receive access to the site and its content. Rest assured your information will not be sold, traded, or given to anyone.</p>
-        <p></p><br> Please contact <a mailto:href="JoeSixPack@Sixpacksrus.com"></a>JoeSixPack@Sixpacksrus.com for any other inquiries.<p></p>
+        <p></p><br> Please contact <a mailto:href="orchestrate_auth@gmail.com"></a>orchestrate_auth@gmail.com for any other inquiries.<p></p>
         </div>
         <div class="tab-pane fade active in" id="signin">
 					<form id="local-sign-in" class="form-horizontal" action="/login" method="post">
@@ -52,51 +52,37 @@
             <div class="control-group">
               <label class="control-label" for="signin"></label>
               <div class="controls">
-                <input name="signin" class="btn btn-success" type="submit" value="Sign In" />
+                <input class="btn btn-success" type="submit" value="Sign In" />
               </div>
             </div>
-						
-						
-<!-- 						<div>
-								<p></p>
-								<label>Username:</label>
-								<input type="text" name="username"/>
-						</div>
-						<div>
-								<label>Password:</label>
-								<input type="password" name="password"/>
-						</div> -->
-<!-- 						<div>
-								<input type="submit" class="btn btn-primary btn-sm" value="Log In"/>
-						</div> -->
 						</fieldset>
 					</form>
 				</div>
         <div class="tab-pane fade" id="signup">
-            <form class="form-horizontal">
+            <form id="local-reg" class="form-horizontal" action="/local-reg" method="post">
             <fieldset>
             <!-- Sign Up Form -->
             <!-- Text input-->
             <div class="control-group">
               <label class="control-label" for="Email">Email:</label>
               <div class="controls">
-                <input id="Email" name="Email" class="form-control" type="text" placeholder="JoeSixpack@sixpacksrus.com" required="" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+                <input id="email" name="email" class="form-control" type="text" placeholder="eg: you@youremail.com" required="" autocomplete="off" />
               </div>
             </div>
             
             <!-- Text input-->
             <div class="control-group">
-              <label class="control-label" for="userid">Alias:</label>
+              <label class="control-label" for="userid">User Name:</label>
               <div class="controls">
-                <input id="userid" name="userid" class="form-control" type="text" placeholder="JoeSixpack" required="" autocomplete="off" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+                <input id="userid" name="userid" class="form-control" type="text" placeholder="your user name" required="" autocomplete="off" />
               </div>
             </div>
             
             <!-- Password input-->
             <div class="control-group">
-              <label class="control-label" for="password">Password:</label>
+              <label class="control-label" for="newpassword">Password:</label>
               <div class="controls">
-                <input id="password" name="password" class="form-control" type="password" placeholder="********" required="" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+                <input id="newpassword" name="newpassword" class="form-control" type="password" placeholder="********" required="" autocomplete="off" />
                 <em>1-8 Characters</em>
               </div>
             </div>
@@ -105,27 +91,15 @@
             <div class="control-group">
               <label class="control-label" for="reenterpassword">Re-Enter Password:</label>
               <div class="controls">
-                <input id="reenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="********" required="" autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">
+                <input id="reenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="********" required="" autocomplete="off" />
               </div>
             </div>
             
-            <!-- Multiple Radios (inline) -->
-<!--             <br>
-            <div class="control-group">
-              <label class="control-label" for="humancheck">Humanity Check:</label>
-              <div class="controls">
-                <label class="radio inline" for="humancheck-0">
-                  <input type="radio" name="humancheck" id="humancheck-0" value="robot" checked="checked">I'm a Robot</label>
-                <label class="radio inline" for="humancheck-1">
-                  <input type="radio" name="humancheck" id="humancheck-1" value="human">I'm Human</label>
-              </div>
-            </div>
-             -->
             <!-- Button -->
             <div class="control-group">
               <label class="control-label" for="confirmsignup"></label>
               <div class="controls">
-                <button id="confirmsignup" name="confirmsignup" class="btn btn-success">Sign Up</button>
+								<input type="submit" id="confirmsignup" name="confirmsignup" class="btn btn-primary btn-sm" value="Register"/>
               </div>
             </div>
             </fieldset>
